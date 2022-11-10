@@ -1,0 +1,10 @@
+{
+  "expo": {
+    "name": "firebase-shop",
+    "slug": "firebase-shop",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
