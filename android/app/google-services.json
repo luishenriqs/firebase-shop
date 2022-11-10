@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "18420366282",
+    "project_id": "fir-shop-cce58",
+    "storage_bucket": "fir-shop-cce58.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:18420366282:android:edc0ac899353d47dd92d33",
+        "android_client_info": {
+          "package_name": "com.firebaseshop"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "18420366282-m70h0kltk4868e3rk9evlae03eo984r8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.firebaseshop",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "18420366282-7g6nfulufbu06f7q0nt8p0s57h6iifko.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAhvzDT_mY5ZM5pnoCyrVlDqOhSaEhZCo0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "18420366282-7g6nfulufbu06f7q0nt8p0s57h6iifko.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
