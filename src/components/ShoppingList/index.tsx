@@ -1,13 +1,54 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { FlatList } from 'react-native';
-
+import firestore from '@react-native-firebase/firestore'
 import { styles } from './styles';
 import { Product, ProductProps } from '../Product';
 
-import { shoppingListExample } from '../../utils/shopping.list.data';
-
 export function ShoppingList() {
-  const [products, setProducts] = useState<ProductProps[]>(shoppingListExample);
+  const [products, setProducts] = useState<ProductProps[]>([]);
+
+/* ***************** */
+  //Estratégia de leitura única
+  // useEffect(() => {
+  //   firestore()
+  //   .collection('products')
+  //   .get()
+  //   .then(response => {
+  //     const data = response.docs.map(doc => {
+  //       return {
+  //         id: doc.id,
+  //       ...doc.data()
+  //       }
+  //     }) as ProductProps[]
+  //     setProducts(data)
+  //   })
+  //   .catch((error) => console.error(error))
+  // }, [])
+  /* ***************** */
+
+  // Estratégia de leitura "Real Time"
+  useEffect(() => {
+    const subscribe = firestore()
+    .collection('products')
+    //.where('quantity', '>', 1)
+    //.limit(2)
+    //.orderBy('quantity', 'desc')
+    //.startAt(5)
+    //.endAt(2)
+    .onSnapshot({
+      error: (e) => console.error(e),
+      next: (querySnapshot) => {
+        const data = querySnapshot.docs.map(doc => {
+          return {
+            id: doc.id,
+          ...doc.data()
+          }
+        }) as ProductProps[]
+        setProducts(data)
+      },
+    }) 
+    return () => subscribe()
+  }, [])
 
   return (
     <FlatList
