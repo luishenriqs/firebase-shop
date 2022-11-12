@@ -1,12 +1,18 @@
 # APRENDENDO FIREBASE
 
 <div align='flex-start'>
-    <img src="" width="700px"/>
+    <img src="https://user-images.githubusercontent.com/63956850/201492814-d5fb84ba-f17c-43e2-8d75-61d0d40f52f4.png" width="700px"/>
 </div>
 
 Módulo bônus da trilha React Native do Ignite da Rocketseat
 
 ## MY SHOPPING APP
+
+**Aplicação destinada a criação de listas de compras e seu respectivo controle**
+*Crie sua lista de compras.*
+*Risque o produto assim que adicionado no carrinho.*
+*Faça upload do comprovante da compra.*
+
 
 ### TECNOLOGIAS UTILIZADAS
 
