@@ -10,6 +10,8 @@ import { Container, Content, Progress, Transferred } from './styles';
 
 export function Upload() {
   const [image, setImage] = useState('');
+  // imageURL pode ser salva nos dados do usuário para agilizar o carregamento;
+  const [imageURL, setImageURL] = useState('');
   const [bytesTransferred, setBytesTransferred] = useState('');
   const [progress, setProgress] = useState('0');
 
@@ -42,8 +44,12 @@ export function Upload() {
       
       setBytesTransferred(`${taskSnapshot.bytesTransferred} transferido de ${taskSnapshot.totalBytes}`);
     });
-    uploadTask.then(() => Alert.alert('Upload sent successfully'))
-    uploadTask.catch(error => console.error(error))
+    uploadTask.then(async () => {
+      const url = await reference.getDownloadURL();
+      setImageURL(url);
+      Alert.alert('Upload sent successfully');
+    });
+    uploadTask.catch(error => console.error(error));
   };
 
   return (
